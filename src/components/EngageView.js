@@ -13,6 +13,7 @@ import {
 import { sortableContainer, sortableElement, sortableHandle } from 'react-sortable-hoc';
 import { EllipsisOutlined } from '@ant-design/icons';
 import arrayMove from 'array-move';
+import { Link } from 'react-router-dom';
 import '../App.less';
 import { engageMockData, engageData } from '../utils/mock.js';
 
@@ -72,7 +73,7 @@ const success = () => {
       msg.push(engageData[element].guestId);
     });
   }
-  if (msg.length) message.success(`<span><b>${msg.join(', ')}</b></span> ${msg.length > 1 ? 'are' : 'is'} successfully saved. `);
+  if (msg.length) message.success(`${msg.join(', ')} ${msg.length > 1 ? 'are' : 'is'} successfully saved. `);
 };
 
 const menu = (
@@ -142,11 +143,7 @@ class EngageView extends React.Component {
           <Row style={{background: '#fff'}}>
             <Col flex='auto'>
               <Space style={{ marginTop: 10, marginBottom: 10, padding: 10, float: 'left'}}>
-                <Button style={{ width: 200 }} onClick={
-                  () => {
-                    window.location.replace('/')
-                  }
-                }>Back to My Book</Button>
+                <Button style={{ width: 200 }}><Link to={'/'}>Back to My Book</Link></Button>
               </Space>
             </Col>
             <Col flex='100px'>

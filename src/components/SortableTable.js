@@ -122,7 +122,7 @@ class SortableTable extends React.Component {
         <Row style={{background: '#fff'}}>
           <Col span={24}>
             <Space style={{ marginTop: 10, marginBottom: 10, padding: 10, float: 'right'}}>
-              <Button style={{width: 150}}>Download</Button>
+              <Button disabled={true} style={{width: 150}}>Download</Button>
             </Space>
           </Col>
         </Row>
