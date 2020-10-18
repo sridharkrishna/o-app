@@ -15,7 +15,7 @@ import { EllipsisOutlined } from '@ant-design/icons';
 import arrayMove from 'array-move';
 import { Link } from 'react-router-dom';
 import '../App.less';
-import { engageMockData, engageData } from '../utils/mock.js';
+import { engageMockData, engageData, activeView } from '../utils/mock.js';
 
 engageMockData(10); 
 
@@ -143,12 +143,12 @@ class EngageView extends React.Component {
           <Row style={{background: '#fff'}}>
             <Col flex='auto'>
               <Space style={{ marginTop: 10, marginBottom: 10, padding: 10, float: 'left'}}>
-                <Button style={{ width: 200 }}><Link to={'/'}>Back to My Book</Link></Button>
+                <Button disabled={true} style={{ width: 200 }}><Link to={'/'}>Back to My Book</Link></Button>
               </Space>
             </Col>
             <Col flex='100px'>
               <Space style={{ marginTop: 10, marginBottom: 10, padding: 10, float: 'right'}}>
-                <Button style={{width: 100}}>Select All</Button>
+                <Button disabled={true} style={{width: 100}}>Select All</Button>
               </Space>
             </Col>
             <Col flex='100px'>

@@ -15,6 +15,7 @@ import Icon from '@ant-design/icons';
 import Routes from './routes';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import './App.less';
+import { activeView } from './utils/mock';
 
 const { Header, Content, Footer } = Layout;
 
@@ -24,8 +25,7 @@ function App() {
   <Layout>
     <Header style={{background: '#fff'}}>
         <img src="https://optx.com/wp-content/uploads/2019/11/logo.png" alt="OPTX" className="logo" />   
-
-        <Menu theme="light" style={{ float: 'right', fontWeight: 'bold' }} mode="horizontal" defaultSelectedKeys={['1']}>
+        <Menu theme="light" style={{ float: 'right', fontWeight: 'bold' }} mode="horizontal" defaultSelectedKeys={[...activeView]}>
         <Menu.Item key="1" icon={<DashboardOutlined />}><Link to={'/'}>Dashboard</Link></Menu.Item>          
         <Menu.Item key="2" icon={<InsertRowAboveOutlined />}><Link to={'/engage'}>Floor View</Link></Menu.Item>
         <Menu.Item key="3" disabled={true} icon={<NodeIndexOutlined />}>Database</Menu.Item>

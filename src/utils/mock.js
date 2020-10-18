@@ -19,6 +19,7 @@ export const exceptionTypes = [
 
 export const data = [];
 export const engageData = [];
+export const activeView = ['1'];
 
 const randomDate = (start, end) => new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 
