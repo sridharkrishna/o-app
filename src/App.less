@@ -1,0 +1,58 @@
+
+html, body {
+  height: 100%;
+  background-color: rgb(231,230,230);
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+// .site-layout-content {
+
+// }
+
+// .layout {
+//   height: 100%;
+// }
+
+.logo {
+  width: 150px; 
+  height: 55px; 
+  display: block; 
+  float: left; 
+  padding: 10px;
+}
+
+[data-theme="light"] .site-layout-content {
+  background: #fff;
+}
+
+[data-theme="light"] .logo {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.row-dragging {
+  background: #fafafa;
+  border: 1px solid #ccc;
+}
+
+.row-dragging td {
+  padding: 16px;
+  visibility: hidden;
+}
+
+.row-dragging .drag-visible {
+  visibility: visible;
+}
+
+.table-striped-rows tr:nth-child(2n) td {
+  background-color: rgb(231,230,230);
+}
+
+.table-conatiner {
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+
