@@ -5,9 +5,10 @@ import {
   Space,
   Row,
   Col,
+  Tooltip
 } from 'antd';
 import { sortableContainer, sortableElement, sortableHandle } from 'react-sortable-hoc';
-import { EllipsisOutlined, EditOutlined } from '@ant-design/icons';
+import { EllipsisOutlined, EditOutlined, DownOutlined } from '@ant-design/icons';
 import arrayMove from 'array-move';
 import '../App.less';
 import { exceptionTypes, mockData, data } from '../utils/mock.js';
@@ -140,7 +141,17 @@ class SortableTable extends React.Component {
             },
           }}
           onChange={this.handleChange}
+          footer={() => (
+            <Row style={{background: 'inherit', height: 36, lineHeight: 2 ,fontWeight: 400, fontSize: 16}}>
+              <Col flex="auto" style={{ textAlign: "center"}}>
+                <Tooltip title="Scroll table to load more records." key={'scroll'}>
+                  <DownOutlined/>
+                </Tooltip>
+              </Col>
+            </Row>
+          )}
         />
+
       </>
     );
   }

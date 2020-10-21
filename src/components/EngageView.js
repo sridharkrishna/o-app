@@ -8,16 +8,17 @@ import {
   Menu,
   Dropdown,
   message,
-  Layout
+  Layout,
+  Tooltip
 } from 'antd';
 import { sortableContainer, sortableElement, sortableHandle } from 'react-sortable-hoc';
-import { EllipsisOutlined } from '@ant-design/icons';
+import { EllipsisOutlined, DownOutlined } from '@ant-design/icons';
 import arrayMove from 'array-move';
 import { Link } from 'react-router-dom';
 import '../App.less';
 import { engageMockData, engageData, activeView } from '../utils/mock.js';
 
-engageMockData(10); 
+engageMockData(50); 
 
 const DragHandle = sortableHandle(() => (
   <EllipsisOutlined  style={{ cursor: 'pointer', fontWeight: 'bold' }} />
@@ -173,6 +174,15 @@ class EngageView extends React.Component {
               },
             }}
             rowSelection={rowSelection}
+            footer={() => (
+              <Row style={{background: 'inherit', height: 36, lineHeight: 2 ,fontWeight: 400, fontSize: 16}}>
+                <Col flex="auto" style={{ textAlign: "center"}}>
+                  <Tooltip title="Scroll table to load more records." key={'scroll'}>
+                    <DownOutlined/>
+                  </Tooltip>
+                </Col>
+              </Row>
+            )}
             />
           </Layout>
       </>
